@@ -1,0 +1,46 @@
+alias: WSL Visitor Detected
+description: ""
+trigger:
+  - platform: state
+    entity_id:
+      - binary_sensor.wsl_visitor_vehicle_detected
+    to: "on"
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 10
+    id: wsl_vehicle_detected
+  - platform: state
+    entity_id:
+      - binary_sensor.wsl_visitor_person_detected
+    to: "on"
+    for:
+      hours: 0
+      minutes: 0
+      seconds: 10
+    id: wsl_person_detected
+condition:
+  - condition: state
+    entity_id: input_boolean.wsl_show_running
+    state: "on"
+action:
+  - if:
+      - condition: trigger
+        id:
+          - wsl_vehicle_detected
+    then:
+      - service: counter.increment
+        data: {}
+        target:
+          entity_id: counter.wsl_visitor_vehicle_counter
+  - if:
+      - condition: trigger
+        id:
+          - wsl_person_detected
+    then:
+      - service: counter.increment
+        data: {}
+        target:
+          entity_id: counter.wsl_visitor_person_counter
+mode: parallel
+max: 10

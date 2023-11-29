@@ -1,0 +1,33 @@
+- resource: http://192.168.104.200/api/system/status
+  scan_interval: 5
+  sensor:
+    - name: "WSLCON00 Usage"
+      value_template: "{{ value_json.advancedView.Utilization.CPU | float | round(1) }}"
+      unit_of_measurement: "%"
+    - name: "WSLCON00 Memory Usage"
+      value_template: "{{ value_json.advancedView.Utilization.Memory | float | round(1) }}"
+      unit_of_measurement: "%"
+    - name: "WSLCON00 Storage Usage"
+      value_template: "{{ ( 100 - (value_json.advancedView.Utilization.Disk.Media.Free / value_json.advancedView.Utilization.Disk.Media.Total * 100) ) | float | round(1) }}"
+      unit_of_measurement: "%"
+    - name: "WSLCON00 FPP Version"
+      value_template: "{{ value_json.advancedView.Version }}"
+    - name: "WSLCON00 FPP OS Version"
+      value_template: "{{ value_json.advancedView.OSVersion }}"
+#    - name: PiPlayer FPP Mode
+#      value_template: "{{ value_json.advancedView.Mode }}"
+#    - name: PiPlayer WiFi Signal
+#      value_template: "{{ value_json.wifi[0].desc }}"
+    - name: "WSLCON00 CPU Temperature"
+      value_template: "{{ value_json.sensors[0].value | float | round(1) }}"
+      unit_of_measurement: °C
+      device_class: temperature
+    - name: "WSLCON00 Status"
+      value_template: "{{ value_json.status_name }}"
+    - name: "WSLCON00 Current Sequence"
+      value_template: "{{ value_json.current_sequence }}"
+    - name: "WSLCON00 Current Playlist"
+      value_template: "{{ value_json.current_playlist.description.playlist }}"
+  binary_sensor:
+    - name: "WSLCON00 FPP Update"
+      value_template: "{{ value_json.advancedView.LocalGitVersion == value_json.advancedView.RemoteGitVersion , 'update'}}"
