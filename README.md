@@ -22,8 +22,8 @@ This solution is used for tracking //approximate// visitor attendance by means o
 
 ### Files:
 
-- rest_plugin_fpp.yaml - REST plugin configuration for scraping FPP status from API
-- auto_visitor_detected.json - Configuration for automation which runs the tracker.
+- ./visitor-tracking/rest_plugin_fpp.yaml - REST plugin configuration for scraping FPP status from API
+- ./visitor-tracking/auto_visitor_detected.json - Configuration for automation which runs the tracker.
 
 ### Not Shown:
 
