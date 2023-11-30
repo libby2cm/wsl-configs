@@ -2,7 +2,7 @@
 
 # About
 
-This repo contains misc configuration for Woodside Lights, a automated light show in Ashland, VA.
+This repo contains misc configuration for Woodside Lights, an automated light show in Ashland, VA.
 
 ## Visitor Tracking
 
@@ -12,7 +12,8 @@ This solution is used for tracking *approximate* visitor attendance by means of 
 
 - Active HASS environment
 - FPP instance online on local network
-- Unifi Protect (with Gen4 or newer cameras) is integrated with Home Assistant and non-overlapping object detecton zones are set on each camera used for visitor tracking. Non-overlapping object zones are important to cut down on duplicate counts.
+- Unifi Protect (with Gen4 or newer cameras) is integrated with Home Assistant
+- Non-overlapping object detecton zones are defined on each camera to be monitored for visitor tracking. Non-overlapping object detection zones (I'm using 70% confidence on the zones, ymmv) are important to cut down on duplicate counts.
 
 ### The premise of operation is below:
 
@@ -29,3 +30,7 @@ This solution is used for tracking *approximate* visitor attendance by means of 
 
 - The helpers you need to configure (easy to infer/update from configs in UX)
 - Dashboard configuration (once you have the counter entities defined, easy enough to add cards for them to a dashboard)
+
+### Misc:
+
+- If you are using the 'Show Status' boolean helper, you can use it in other automations as well. For example, I have an automation which shuts off all inside/outside lights if they are on, or turned on, during showtime. The family *LOVES* this.. 🤪
