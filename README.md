@@ -33,4 +33,4 @@ This solution is used for tracking *approximate* visitor attendance by means of 
 
 ### Misc:
 
-- If you are using the 'Show Status' boolean helper, you can use it in other automations as well. For example, I have an automation which shuts off all inside/outside lights if they are on, or turned on, during showtime. The family *LOVES* this.. 🤪
+- If you are using the 'Show Status' boolean helper, you can use it in other automations as well. For example, I have an automation which shuts off select 'visitor facing' inside/outside lights if they are on, or turned on, during showtime. The family *LOVES* this.. 🤪
