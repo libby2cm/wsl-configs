@@ -26,6 +26,17 @@ This solution is used for tracking *approximate* visitor attendance by means of 
 - ./visitor-tracking/rest_plugin_fpp.yaml - REST plugin configuration for scraping FPP status from API
 - ./visitor-tracking/auto_visitor_detected.json - Configuration for automation which runs the tracker.
 
+### To Configure:
+
+* In Protect, set object detection zones on the cameras you want to use for visitor detection (must have Gen4+ cams!)
+* Setup your Protect integration in HASS if not done already
+* Create the intermediate show status boolean helper as well as counter helpers for vehicles & people
+* Define the rest integration configuration in your HASS configuration.yaml, taking care to update values from my configuration since your show probably isn't named Woodside Lights
+* Create the visitor tracking automation, again taking care to update entity names you used.
+* Add a card on a dashboard to easily view the 2 counter entities you created
+
+With any luck, you will have a decent approximation of visitor counts for your show
+
 ### Not Shown:
 
 - The helpers you need to configure (easy to infer/update from configs in UX)
