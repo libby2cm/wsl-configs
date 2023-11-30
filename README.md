@@ -10,9 +10,10 @@ This solution is used for tracking *approximate* visitor attendance by means of 
 
 ### Prerequisites:
 
+- At least somewhat working knowledge of Unifi Protect, HASS, and FPP
 - Active HASS environment
 - FPP instance online on local network
-- Unifi Protect (with Gen4 or newer cameras) is integrated with Home Assistant
+- Unifi protect instance online on local network (with Gen4 or newer cameras!) and integration is setup in Home Assistant
 - Non-overlapping object detecton zones are defined on each camera to be monitored for visitor tracking. Non-overlapping object detection zones (I'm using 70% confidence on the zones, ymmv) are important to cut down on duplicate counts.
 
 ### The premise of operation is below:
@@ -32,10 +33,10 @@ This solution is used for tracking *approximate* visitor attendance by means of 
 * Setup your Protect integration in HASS if not done already
 * Create the intermediate show status boolean helper as well as counter helpers for vehicles & people
 * Define the rest integration configuration in your HASS configuration.yaml, taking care to update values from my configuration since your show probably isn't named Woodside Lights
-* Create the visitor tracking automation, again taking care to update entity names you used.
+* Create the visitor tracking automation, again taking care to update entity names you used AND names of your playlists.. don't forget to include your main playlist AND remote falcon playlist if you are using it, otherwise you will miss events when RF is playing a sequence.
 * Add a card on a dashboard to easily view the 2 counter entities you created
 
-With any luck, you will have a decent approximation of visitor counts for your show
+With any luck, you will have a decent approximation of visitor counts for your show.
 
 ### Not Shown:
 
