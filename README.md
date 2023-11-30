@@ -6,7 +6,7 @@ This repo contains misc configuration for Woodside Lights, a automated light sho
 
 ## Visitor Tracking
 
-This solution is used for tracking //approximate// visitor attendance by means of Unifi Protect object detection, FPP & Home Assistant.
+This solution is used for tracking *approximate* visitor attendance by means of Unifi Protect object detection, FPP & Home Assistant.
 
 ### Prerequisites:
 
